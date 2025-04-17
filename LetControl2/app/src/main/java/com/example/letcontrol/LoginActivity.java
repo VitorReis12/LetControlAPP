@@ -20,6 +20,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText InputEmail, InputPassword;
     Button buttonLogin;
+    Button buttonTesteTelas;
     TextView textViewErro, textViewActionCadastrar;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         textViewErro = findViewById(R.id.textViewErro);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewActionCadastrar = findViewById(R.id.textViewActionCadastrar);
+        buttonTesteTelas = findViewById(R.id.buttonTesteTelas);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +63,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CadastroActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonTesteTelas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ConnectingWifiActivity.class);
                 startActivity(intent);
             }
         });

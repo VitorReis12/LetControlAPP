@@ -8,69 +8,48 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAccont"
-        android:layout_width="124px"
-        android:layout_height="124px"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:id="@+id/buttonInicio"
+        android:layout_width="87px"
+        android:layout_height="87px"
         android:layout_marginBottom="7dp"
-        android:background="@drawable/li_user"
-        app:layout_constraintBottom_toTopOf="@+id/textViewAccont"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonStatistics" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonWatch"
-        android:layout_width="124px"
-        android:layout_height="124px"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="7dp"
-        android:background="@drawable/li_clock"
-        app:layout_constraintBottom_toTopOf="@+id/textViewWatch"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:background="@drawable/inicio_blue"
+        android:paddingTop="12px"
+        app:layout_constraintBottom_toTopOf="@+id/textViewInicio"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonHome"
-        android:layout_width="124px"
-        android:layout_height="124px"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:id="@+id/buttonAvisos"
+        android:layout_width="87px"
+        android:layout_height="87px"
         android:layout_marginBottom="7dp"
-        android:background="@drawable/li_home"
-        app:layout_constraintBottom_toTopOf="@+id/textViewHome"
-        app:layout_constraintEnd_toStartOf="@+id/buttonStatistics"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonSearch" />
+        android:background="@drawable/avisos_gray"
+        android:paddingTop="12px"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAvisos"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline9" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonStatistics"
-        android:layout_width="124px"
-        android:layout_height="124px"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:id="@+id/buttonPerfil"
+        android:layout_width="87px"
+        android:layout_height="87px"
         android:layout_marginBottom="7dp"
-        android:background="@drawable/li_statistics"
-        app:layout_constraintBottom_toTopOf="@+id/textViewStatistics"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAccont"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonHome" />
+        android:background="@drawable/perfil_gray"
+        android:paddingTop="12px"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPerfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonSearch"
-        android:layout_width="124px"
-        android:layout_height="124px"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
+        android:id="@+id/buttonInforme"
+        android:layout_width="87px"
+        android:layout_height="87px"
         android:layout_marginBottom="7dp"
-        android:background="@drawable/li_search"
-        app:layout_constraintBottom_toTopOf="@+id/textViewSearch"
-        app:layout_constraintEnd_toStartOf="@+id/buttonHome"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonWatch" />
+        android:background="@drawable/informe_gray"
+        android:paddingTop="12px"
+        app:layout_constraintBottom_toTopOf="@+id/textViewInforme"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -90,7 +69,8 @@
         android:id="@+id/frame_conteudo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHome"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAvisos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -98,79 +78,55 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textViewHome"
+        android:id="@+id/textViewAvisos"
         android:layout_width="140px"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
         android:gravity="center"
-        android:text="Home"
-        android:textColor="#09A5FD"
+        android:text="Avisos"
+        android:textColor="#BFC0C2"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewStatistics"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewSearch" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline9" />
 
     <TextView
-        android:id="@+id/textViewStatistics"
+        android:id="@+id/textViewPerfil"
         android:layout_width="140px"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
         android:gravity="center"
-        android:textColor="#09A5FD"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewAccont"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewHome" />
-
-    <TextView
-        android:id="@+id/textViewAccont"
-        android:layout_width="140px"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:gravity="center"
-        android:textColor="#09A5FD"
+        android:text="Perfil"
+        android:textColor="#BFC0C2"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewStatistics" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <TextView
-        android:id="@+id/textViewSearch"
+        android:id="@+id/textViewInforme"
         android:layout_width="140px"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
         android:gravity="center"
+        android:text="Informe"
+        android:textColor="#BFC0C2"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textViewInicio"
+        android:layout_width="124px"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Início"
         android:textColor="#09A5FD"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewHome"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textViewWatch" />
-
-    <TextView
-        android:id="@+id/textViewWatch"
-        android:layout_width="140px"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:gravity="center"
-        android:textColor="#09A5FD"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textViewSearch"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -179,4 +135,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:elevation="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonInforme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame_conteudo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

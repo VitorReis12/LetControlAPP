@@ -1,6 +1,7 @@
 package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,18 +16,17 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonhome, buttonAccont, buttonseach, buttonstatistics, buttonwacht;
+    private Button buttonhome, buttonUser, buttoninformation, buttonwarnings;
 
-    private TextView textViewHome, textViewWatch, textViewStatistics, textViewAccount, textViewSearch;
+    private TextView textViewHome, textViewWarnings, textViewinformation, textViewUser;
 
     private Fragment_Home fragmentHome;
-    private AccontFragment accontFragment;
+    private UserFragment userFragment;
 
-    private statisticsFragment statisticsFragment;
+    private WarningsFragment warningsFragment;
 
-    private SearchFragment searchFragment;
+    private InformationFragment informationFragment;
 
-    private WatchFragment watchFragment;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,23 +40,20 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        accontFragment = new AccontFragment();
+        userFragment = new UserFragment();
         fragmentHome = new Fragment_Home();
-        statisticsFragment = new statisticsFragment();
-        searchFragment = new SearchFragment();
-        watchFragment = new WatchFragment();
+        warningsFragment = new WarningsFragment();
+        informationFragment = new InformationFragment();
 
-        textViewHome = findViewById(R.id.textViewHome);
-        textViewWatch = findViewById(R.id.textViewWatch);
-        textViewStatistics = findViewById(R.id.textViewStatistics);
-        textViewAccount = findViewById(R.id.textViewAccont);
-        textViewSearch = findViewById(R.id.textViewSearch);
+        textViewWarnings = findViewById(R.id.textViewAvisos);
+        textViewHome = findViewById(R.id.textViewInicio);
+        textViewUser = findViewById(R.id.textViewPerfil);
+        textViewinformation = findViewById(R.id.textViewInforme);
 
-        buttonhome = findViewById(R.id.buttonHome);
-        buttonAccont = findViewById(R.id.buttonAccont);
-        buttonstatistics = findViewById(R.id.buttonStatistics);
-        buttonwacht = findViewById(R.id.buttonWatch);
-        buttonseach = findViewById(R.id.buttonSearch);
+        buttonwarnings = findViewById(R.id.buttonAvisos);
+        buttonUser = findViewById(R.id.buttonPerfil);
+        buttonhome = findViewById(R.id.buttonInicio);
+        buttoninformation = findViewById(R.id.buttonInforme);
 
         androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.frame_conteudo, fragmentHome);
@@ -67,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ResetButton();
-                buttonhome.setBackgroundResource(R.drawable.li_home);
+                buttonhome.setBackgroundResource(R.drawable.inicio_blue);
 
                 ResetText();
-                textViewHome.setText("Home");
+                textViewHome.setTextColor(Color.parseColor("#2CB4ED"));
 
                 androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_conteudo, fragmentHome );
@@ -78,69 +75,53 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonAccont.setOnClickListener(new View.OnClickListener() {
+
+
+        buttonUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 ResetButton();
-                buttonAccont.setBackgroundResource(R.drawable.li_user_blue);
-
+                buttonUser.setBackgroundResource(R.drawable.perfil_blue);
 
                 ResetText();
-                textViewAccount.setText("Account");
+                textViewUser.setTextColor(Color.parseColor("#2CB4ED"));
 
-
-                androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo, accontFragment );
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.frame_conteudo, userFragment);
                 transaction.commit();
             }
         });
 
-        buttonseach.setOnClickListener(new View.OnClickListener() {
+        buttonwarnings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 ResetButton();
-                buttonseach.setBackgroundResource(R.drawable.li_search_blue);
+                buttonwarnings.setBackgroundResource(R.drawable.avisos_blue);
+
 
                 ResetText();
-                textViewSearch.setText("Search");
+                textViewWarnings.setTextColor(Color.parseColor("#2CB4ED"));
 
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo, searchFragment);
+                transaction.replace(R.id.frame_conteudo, warningsFragment);
                 transaction.commit();
             }
         });
 
-        buttonwacht.setOnClickListener(new View.OnClickListener() {
+        buttoninformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 ResetButton();
-                buttonwacht.setBackgroundResource(R.drawable.li_clock_blue);
-
-
-                ResetText();
-                textViewWatch.setText("Watch");
-
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo, watchFragment);
-                transaction.commit();
-            }
-        });
-
-        buttonstatistics.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ResetButton();
-                buttonstatistics.setBackgroundResource(R.drawable.li_pie_chart_blue);
+                buttoninformation.setBackgroundResource(R.drawable.informe_blue);
 
                 ResetText();
-                textViewStatistics.setText("Statistics");
+                textViewinformation.setTextColor(Color.parseColor("#2CB4ED"));
 
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo, statisticsFragment);
+                FragmentTransaction transaction = getSupportFragmentManager ().beginTransaction();
+                transaction.replace(R.id.frame_conteudo, informationFragment);
                 transaction.commit();
             }
         });
@@ -149,19 +130,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ResetButton(){
-        buttonhome.setBackgroundResource(R.drawable.li_home_grey);
-        buttonAccont.setBackgroundResource(R.drawable.li_user);
-        buttonstatistics.setBackgroundResource(R.drawable.li_statistics);
-        buttonwacht.setBackgroundResource(R.drawable.li_clock);
-        buttonseach.setBackgroundResource(R.drawable.li_search);
+        buttonhome.setBackgroundResource(R.drawable.inicio_gray);
+        buttonUser.setBackgroundResource(R.drawable.perfil_gray);
+
+        buttonwarnings.setBackgroundResource(R.drawable.aviso_new_gray);
+        buttoninformation.setBackgroundResource(R.drawable.informe_gray);
+
     }
 
     public void ResetText(){
-        textViewHome.setText("");
-        textViewAccount.setText("");
-        textViewSearch.setText("");
-        textViewStatistics.setText("");
-        textViewWatch.setText("");
+        textViewHome.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewUser.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewinformation.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewWarnings.setTextColor(Color.parseColor("#BFC0C2"));
     }
 
 
