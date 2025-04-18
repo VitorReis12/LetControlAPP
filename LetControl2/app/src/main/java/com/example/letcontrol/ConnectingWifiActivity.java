@@ -4,15 +4,18 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -30,11 +33,14 @@ public class ConnectingWifiActivity extends AppCompatActivity {
     TextInputEditText TextInputRede, TextInputSenhaRede;
     Button buttonCadastrarRede;
 
-    BluetoothAdapter bluetoothAdapter;
+    BluetoothAdapter bluetoothAdapter, adapter;
     BluetoothSocket socket;
-    BluetoothDevice letControl;
+    BluetoothDevice letControl = null;
+
+    String nomeRede, senhaRede, comando;
     UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @SuppressLint({"MissingInflatedId", "MissingPermission"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,60 +61,86 @@ public class ConnectingWifiActivity extends AppCompatActivity {
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
+
         buttonCadastrarRede.setOnClickListener(v -> {
-            String nomeRede = TextInputRede.getText().toString();
-            String senhaRede = TextInputSenhaRede.getText().toString();
+            nomeRede = TextInputRede.getText().toString();
+            senhaRede = TextInputSenhaRede.getText().toString();
 
             if (nomeRede.isEmpty() || senhaRede.isEmpty()) {
                 Toast.makeText(this, "Preencha ambos os campos", Toast.LENGTH_SHORT).show();
-                return;
+
             }
 
-            String comando = nomeRede + ";" + senhaRede + "\n";
+            comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + "\n";
 
+
+            if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                    checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
+                    checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+
+                requestPermissions(
+                        new String[]{
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION,
+                                Manifest.permission.BLUETOOTH_CONNECT
+                        },
+                        1);
+            }
 
             if (!bluetoothAdapter.isEnabled()) {
-                Intent BtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(BtIntent, 1);
-                return;
+                Toast.makeText(getApplicationContext(), "Ative o Bluetooth e conecte ao dispositivo LetControl", Toast.LENGTH_LONG).show();
             }
 
 
-            Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
-            for (BluetoothDevice device : pairedDevices) {
-                if (device.getName().equals("LetControl")) {
-                    letControl = device;
-                    break;
+            if (bluetoothAdapter.getState() == BluetoothAdapter.STATE_ON) {
+                Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+                for (BluetoothDevice device : pairedDevices) {
+                    if (device.getName().equals("LetControl")) {
+                        letControl = device;
+
+                    }
                 }
             }
+
 
             if (letControl == null) {
-                Toast.makeText(this, "Dispositivo LetControl não encontrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Dispositivo LetControl não encontrado", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+            if (checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN}, 2);
                 return;
             }
 
-            new Thread(() -> {
-                try {
-                    socket = letControl.createRfcommSocketToServiceRecord(uuid);
-                    bluetoothAdapter.cancelDiscovery();
-                    socket.connect();
 
-                    OutputStream outputStream = socket.getOutputStream();
-                    outputStream.write(comando.getBytes());
+            if (letControl != null) {
+                new Thread(() -> {
+                    try {
+                        socket = letControl.createRfcommSocketToServiceRecord(uuid);
 
-                    runOnUiThread(() ->
-                            Toast.makeText(ConnectingWifiActivity.this, "Comando enviado com sucesso", Toast.LENGTH_SHORT).show()
-                    );
+                        bluetoothAdapter.cancelDiscovery();
+                        socket.connect();
 
-                    socket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    runOnUiThread(() ->
-                            Toast.makeText(ConnectingWifiActivity.this, "Erro na conexão: " + e.getMessage(), Toast.LENGTH_LONG).show()
-                    );
-                }
-            }).start();
+                        OutputStream outputStream = socket.getOutputStream();
+                        outputStream.write(comando.getBytes());
+
+                        runOnUiThread(() ->
+                                Toast.makeText(getApplicationContext(), "Comando enviado com sucesso", Toast.LENGTH_SHORT).show());
+
+                        socket.close();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        runOnUiThread(() ->
+                                Toast.makeText(getApplicationContext(), "Erro na conexão", Toast.LENGTH_LONG).show());
+                    }
+                }).start();
+            }
+
         });
+
     }
 
 }
