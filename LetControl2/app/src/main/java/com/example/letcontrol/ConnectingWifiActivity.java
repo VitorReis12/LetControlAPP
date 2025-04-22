@@ -68,7 +68,7 @@ public class ConnectingWifiActivity extends AppCompatActivity {
 
             if (nomeRede.isEmpty() || senhaRede.isEmpty()) {
                 Toast.makeText(this, "Preencha ambos os campos", Toast.LENGTH_SHORT).show();
-
+                return;
             }
 
             comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + "\n";
@@ -85,10 +85,12 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                                 Manifest.permission.BLUETOOTH_CONNECT
                         },
                         1);
+                return;
             }
 
             if (!bluetoothAdapter.isEnabled()) {
                 Toast.makeText(getApplicationContext(), "Ative o Bluetooth e conecte ao dispositivo LetControl", Toast.LENGTH_LONG).show();
+                return;
             }
 
 
@@ -105,7 +107,7 @@ public class ConnectingWifiActivity extends AppCompatActivity {
 
             if (letControl == null) {
                 Toast.makeText(getApplicationContext(), "Dispositivo LetControl não encontrado", Toast.LENGTH_SHORT).show();
-
+                return;
             }
 
 
@@ -130,6 +132,8 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Comando enviado com sucesso", Toast.LENGTH_SHORT).show());
 
                         socket.close();
+
+                        finish();
 
                     } catch (IOException e) {
                         e.printStackTrace();

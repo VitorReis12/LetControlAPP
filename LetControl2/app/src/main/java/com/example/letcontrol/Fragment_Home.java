@@ -98,7 +98,7 @@ public class Fragment_Home extends Fragment {
         return view;
 
     }
-
+    //Senha do apk é "letcontrol"
     public void PorcentagemProgressbar(ProgressBar progressBar){
         variableprogress = String.valueOf(progressBar.getProgress());
         progressText.setText(variableprogress + "%");

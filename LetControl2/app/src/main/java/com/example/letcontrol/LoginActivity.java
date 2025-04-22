@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonTesteTelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),ConnectingWifiActivity.class);
+                Intent intent = new Intent(getApplicationContext(), TutorialFragmentsActivity.class);
                 startActivity(intent);
             }
         });
