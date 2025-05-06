@@ -2,6 +2,7 @@ package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
@@ -41,10 +44,12 @@ public class Fragment_Home extends Fragment {
 
     public ImageView imageViewAccount;
 
+    private Button buttonHome, buttonUser, buttonInformation, buttonWarnings;
     public UserFragment accontFragment;
 
     public String TextMeta = "";
-    public TextView textViewDialog, textViewMeta;
+    public TextView textViewDialog, textViewMeta, textViewHome, textViewWarnings, textViewInformation, textViewUser;
+
 
     public AlertDialog incomeAlert;
 
@@ -91,26 +96,63 @@ public class Fragment_Home extends Fragment {
         progressText = view.findViewById(R.id.textViewProgressBar);
         imageViewAccount = view.findViewById(R.id.imageViewAccount);
         PorcentagemProgressbar(progressBar);
+        buttonWarnings = view.findViewById(R.id.buttonAvisos);
+        buttonUser = view.findViewById(R.id.buttonPerfil);
+        buttonHome = view.findViewById(R.id.buttonInicio);
+        buttonInformation = view.findViewById(R.id.buttonInforme);
         textViewMeta = view.findViewById(R.id.textViewMeta);
         textViewDialog = view.findViewById(R.id.textViewDialog);
         textViewDialog.setOnClickListener(v -> AbrirDialog());
+
+        textViewWarnings = view.findViewById(R.id.textViewAvisos);
+        textViewHome = view.findViewById(R.id.textViewInicio);
+        textViewUser = view.findViewById(R.id.textViewPerfil);
+        textViewInformation = view.findViewById(R.id.textViewInforme);
+
         imageViewAccount.setOnClickListener(v -> FrameAccount());
         return view;
 
     }
+
     //Senha do apk é "letcontrol"
-    public void PorcentagemProgressbar(ProgressBar progressBar){
+    public void PorcentagemProgressbar(ProgressBar progressBar) {
         variableprogress = String.valueOf(progressBar.getProgress());
         progressText.setText(variableprogress + "%");
 
     }
 
-    public void FrameAccount(){
+    public void FrameAccount() {
+
+        try {
+            ResetText();
+            ResetButton();
+            textViewUser.setTextColor(Color.parseColor("#2CB4ED"));
+            buttonUser.setBackgroundResource(R.drawable.perfil_blue);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getContext(), e + "", Toast.LENGTH_SHORT).show();
+        }
+
+
         androidx.fragment.app.FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_conteudo, new UserFragment());
         transaction.commit();
     }
 
+    public void ResetButton() {
+        buttonHome.setBackgroundResource(R.drawable.inicio_gray);
+        buttonUser.setBackgroundResource(R.drawable.perfil_gray);
+        buttonWarnings.setBackgroundResource(R.drawable.aviso_new_gray);
+        buttonInformation.setBackgroundResource(R.drawable.informe_gray);
+    }
+
+
+    public void ResetText() {
+        textViewHome.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewUser.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewInformation.setTextColor(Color.parseColor("#BFC0C2"));
+        textViewWarnings.setTextColor(Color.parseColor("#BFC0C2"));
+    }
 
     public void AbrirDialog() {
         View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_layout_meta, null);

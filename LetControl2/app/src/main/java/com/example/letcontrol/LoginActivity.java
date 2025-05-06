@@ -17,6 +17,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class LoginActivity extends AppCompatActivity {
     TextInputEditText InputEmail, InputPassword;
     Button buttonLogin;
@@ -47,14 +56,55 @@ public class LoginActivity extends AppCompatActivity {
                 String email = InputEmail.getText().toString();
                 String password = InputPassword.getText().toString();
 
-                if (email.equals("vitor") && password.equals("senha")){
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                }
+                new Thread(() -> {
+                    try {
+                        URL url = new URL("http://letcontrol.free.nf/letcontrolphp/login.php");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setDoOutput(true);
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-                else{
-                    textViewErro.setText("Login Inválido - Tente Novamente");
-                }
+                        String postData = "email=" + email + "&senha=" + password;
+                        OutputStream os = conn.getOutputStream();
+                        os.write(postData.getBytes());
+                        os.flush();
+                        os.close();
+
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        StringBuilder response = new StringBuilder();
+                        String line;
+
+                        while ((line = reader.readLine()) != null) {
+                            response.append(line);
+                        }
+
+                        reader.close();
+
+                        JSONObject json = new JSONObject(response.toString());
+                        String status = json.getString("status");
+
+                        runOnUiThread(() -> {
+                            if (status.equals("ok")) {
+                                String token = null;
+                                try {
+                                    token = json.getString("token");
+                                } catch (JSONException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                // Aqui você pode salvar o token no SharedPreferences, por exemplo.
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                intent.putExtra("token", token);
+                                startActivity(intent);
+                            } else {
+                                textViewErro.setText("Login inválido: " + json.optString("mensagem", "erro desconhecido"));
+                            }
+                        });
+
+                    } catch (Exception e) {
+                        runOnUiThread(() -> textViewErro.setText("Erro de conexão: " + e.getMessage()));
+                        e.printStackTrace();
+                    }
+                }).start();
 
             }
         });

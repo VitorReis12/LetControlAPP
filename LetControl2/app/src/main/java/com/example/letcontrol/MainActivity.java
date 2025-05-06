@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonhome, buttonUser, buttoninformation, buttonwarnings;
+    public Button buttonhome, buttonUser, buttoninformation, buttonwarnings;
 
     private TextView textViewHome, textViewWarnings, textViewinformation, textViewUser;
 
@@ -132,10 +132,8 @@ public class MainActivity extends AppCompatActivity {
     public void ResetButton(){
         buttonhome.setBackgroundResource(R.drawable.inicio_gray);
         buttonUser.setBackgroundResource(R.drawable.perfil_gray);
-
         buttonwarnings.setBackgroundResource(R.drawable.aviso_new_gray);
         buttoninformation.setBackgroundResource(R.drawable.informe_gray);
-
     }
 
     public void ResetText(){
