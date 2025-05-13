@@ -37,7 +37,7 @@ public class ConnectingWifiActivity extends AppCompatActivity {
     BluetoothSocket socket;
     BluetoothDevice letControl = null;
 
-    String nomeRede, senhaRede, comando;
+    String nomeRede, senhaRede, comando, comand;
     UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     @RequiresApi(api = Build.VERSION_CODES.S)
@@ -71,7 +71,13 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                 return;
             }
 
-            comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + "\n";
+
+
+
+            String user = User.getEmail();
+
+            comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + ";" + "user=" + user + "\n";
+            comand = "rede=Homi 2G" + ";" + "senha=C0rn37_0g" + ";" + "user=" + user + "\n";
 
 
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
@@ -117,34 +123,41 @@ public class ConnectingWifiActivity extends AppCompatActivity {
             }
 
 
-            if (letControl != null) {
-                new Thread(() -> {
-                    try {
-                        socket = letControl.createRfcommSocketToServiceRecord(uuid);
+            new Thread(() -> {
+                try {
+                    socket = letControl.createRfcommSocketToServiceRecord(uuid);
+                    bluetoothAdapter.cancelDiscovery();
+                    socket.connect();
 
-                        bluetoothAdapter.cancelDiscovery();
-                        socket.connect();
+                    OutputStream outputStream = socket.getOutputStream();
+                    outputStream.write(comando.getBytes());
+                    outputStream.flush();
 
-                        OutputStream outputStream = socket.getOutputStream();
-                        outputStream.write(comando.getBytes());
-
-                        runOnUiThread(() ->
-                                Toast.makeText(getApplicationContext(), "Comando enviado com sucesso", Toast.LENGTH_SHORT).show());
-
+                    // Fecha o socket antes de tocar na UI
+                    if (socket != null && socket.isConnected()) {
                         socket.close();
-
-                        finish();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        runOnUiThread(() ->
-                                Toast.makeText(getApplicationContext(), "Erro na conexão", Toast.LENGTH_LONG).show());
                     }
-                }).start();
-            }
+
+                    // Agora sim, toque na UI com segurança
+                    runOnUiThread(() -> {
+                        if (!isFinishing()) {
+                            Toast.makeText(getApplicationContext(), "Comando enviado com sucesso", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    runOnUiThread(() -> {
+                        if (!isFinishing()) {
+                            Toast.makeText(getApplicationContext(), "Erro na conexão", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }).start();
+
 
         });
 
     }
-
 }

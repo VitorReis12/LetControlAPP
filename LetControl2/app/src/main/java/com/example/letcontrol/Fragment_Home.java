@@ -44,7 +44,7 @@ public class Fragment_Home extends Fragment {
 
     public ImageView imageViewAccount;
 
-    private Button buttonHome, buttonUser, buttonInformation, buttonWarnings;
+    private Button buttonHome, buttonUser, buttonInformation, buttonWarnings, buttonRitmoAtual;
     public UserFragment accontFragment;
 
     public String TextMeta = "";
@@ -92,24 +92,29 @@ public class Fragment_Home extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment__home, container, false);
 
-        progressBar = view.findViewById(R.id.progressBar);
-        progressText = view.findViewById(R.id.textViewProgressBar);
-        imageViewAccount = view.findViewById(R.id.imageViewAccount);
-        PorcentagemProgressbar(progressBar);
+//        progressBar = view.findViewById(R.id.progressBar);
+//        progressText = view.findViewById(R.id.textViewProgressBar);
+//
+//        PorcentagemProgressbar(progressBar);
+//
+//        textViewMeta = view.findViewById(R.id.textViewMeta);
+//        textViewDialog = view.findViewById(R.id.textViewDialog);
+//        textViewDialog.setOnClickListener(v -> AbrirDialog());
+
         buttonWarnings = view.findViewById(R.id.buttonAvisos);
         buttonUser = view.findViewById(R.id.buttonPerfil);
         buttonHome = view.findViewById(R.id.buttonInicio);
         buttonInformation = view.findViewById(R.id.buttonInforme);
-        textViewMeta = view.findViewById(R.id.textViewMeta);
-        textViewDialog = view.findViewById(R.id.textViewDialog);
-        textViewDialog.setOnClickListener(v -> AbrirDialog());
-
+        imageViewAccount = view.findViewById(R.id.imageViewAccount);
         textViewWarnings = view.findViewById(R.id.textViewAvisos);
         textViewHome = view.findViewById(R.id.textViewInicio);
         textViewUser = view.findViewById(R.id.textViewPerfil);
         textViewInformation = view.findViewById(R.id.textViewInforme);
+        buttonRitmoAtual = view.findViewById(R.id.button_ritmo_atual);
+
 
         imageViewAccount.setOnClickListener(v -> FrameAccount());
+        buttonRitmoAtual.setOnClickListener(v -> RitmoAtual());
         return view;
 
     }
@@ -154,18 +159,28 @@ public class Fragment_Home extends Fragment {
         textViewWarnings.setTextColor(Color.parseColor("#BFC0C2"));
     }
 
-    public void AbrirDialog() {
-        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_layout_meta, null);
-        TextInputEditText editText = dialogView.findViewById(R.id.editText);
+//    public void AbrirDialog() {
+//        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_layout_meta, null);
+//        TextInputEditText editText = dialogView.findViewById(R.id.editText);
+//
+//        new MaterialAlertDialogBuilder(requireContext())
+//                .setTitle("Alterar Minha Meta")
+//                .setView(dialogView)
+//                .setPositiveButton("OK", (dialog, which) -> {
+//                    textViewMeta.setText(MessageFormat.format("{0}L", Objects.requireNonNull(editText.getText())));
+//                })
+//                .setNegativeButton("Close", (dialog, which) -> dialog.dismiss())
+//                .show();
+//    }
 
-        new MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Alterar Minha Meta")
-                .setView(dialogView)
-                .setPositiveButton("OK", (dialog, which) -> {
-                    textViewMeta.setText(MessageFormat.format("{0}L", Objects.requireNonNull(editText.getText())));
-                })
-                .setNegativeButton("Close", (dialog, which) -> dialog.dismiss())
-                .show();
+    public void RitmoAtual(){
+
+        androidx.fragment.app.FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_conteudo, new RitmoAtualFragment());
+        transaction.commit();
+
+
     }
+
 
 }

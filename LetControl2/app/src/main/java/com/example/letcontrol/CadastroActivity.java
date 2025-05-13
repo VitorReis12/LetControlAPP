@@ -1,9 +1,12 @@
 package com.example.letcontrol;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,8 +27,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -92,25 +97,13 @@ public class CadastroActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("http://letcontrol.free.nf/letcontrolphp/cadastro.php");
-                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                        conn.setRequestMethod("POST");
-                        conn.setDoOutput(true);
-                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                        conn.setConnectTimeout(15000);
-                        conn.setReadTimeout(15000);
 
                         String nome = inputNome.getText().toString().trim();
                         String email = inputEmail.getText().toString().trim();
                         String senha = inputSenha.getText().toString().trim();
                         String cfSenha = inputCfSenha.getText().toString().trim();
 
-                        if (!senha.equals(cfSenha)) {
-                            runOnUiThread(() ->
-                                    Toast.makeText(getApplicationContext(), "As senhas não coincidem", Toast.LENGTH_LONG).show()
-                            );
-                            return;
-                        }
+
 
                         String estado = "SP";
 
@@ -119,41 +112,75 @@ public class CadastroActivity extends AppCompatActivity {
                                 "&senha=" + URLEncoder.encode(senha, "UTF-8") +
                                 "&estado=" + URLEncoder.encode(estado, "UTF-8");
 
-                        OutputStream os = conn.getOutputStream();
-                        os.write(postData.getBytes());
+                        User.setEmail(email);
+
+                        URL url = new URL("https://e196-143-0-189-18.ngrok-free.app/letcontrolphp/cadastro.php");
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("POST");
+                        conn.setDoOutput(true);
+                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");//1
+                        conn.setRequestProperty("Content-Length", String.valueOf(postData.getBytes().length));
+                        conn.setRequestProperty("Content-Language", "pt-BR");
+                        conn.setUseCaches(false);
+                        conn.setDoInput(true);
+                        conn.setDoOutput(true);
+
+
+                        if (!senha.equals(cfSenha)) {
+                            runOnUiThread(() ->
+                                    Toast.makeText(getApplicationContext(), "As senhas não coincidem", Toast.LENGTH_LONG).show()
+                            );
+                            return;
+                        }
+
+
+
+                        OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream(), "utf-8");
+                        os.write(postData);
                         os.flush();
                         os.close();
 
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        StringBuilder response = new StringBuilder();
-                        String line;
+                        Log.d("POST_DATA", postData);
 
-                        while ((line = reader.readLine()) != null) {
-                            response.append(line);
+                        InputStream inputStream = conn.getInputStream();
+                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+
+                        String line;
+                        StringBuffer resposta = new StringBuffer();
+
+                        while((line = bufferedReader.readLine()) != null) {
+                            resposta.append(line);
+                            resposta.append('\r');
                         }
 
-                        reader.close();
+                        bufferedReader.close();
+                        conn.disconnect();
 
-                        JSONObject json = new JSONObject(response.toString());
+                        JSONObject json = new JSONObject(resposta.toString());
                         String status = json.getString("status");
 
                         runOnUiThread(() -> {
                             if (status.equals("ok")) {
                                 String token = null;
                                 try {
-                                    token = json.getString("token");
+                                    token = json.getString("user");
                                 } catch (JSONException e) {
                                     throw new RuntimeException(e);
+
                                 }
-                                // Você pode salvar o token aqui usando SharedPreferences
+
                                 Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), TutorialFragmentsActivity.class);
-                                intent.putExtra("token", token);
+                                intent.putExtra("user", token);
                                 finish();
                                 startActivity(intent);
+                                Log.d(TAG, "Resposta do servidor: " + resposta.toString());
+                                Log.d("Servidor", "Resposta bruta: " + resposta);
                             } else {
                                 String mensagem = json.optString("mensagem", "Erro desconhecido");
                                 Toast.makeText(getApplicationContext(), "Erro: " + mensagem, Toast.LENGTH_LONG).show();
+                                Log.d(TAG, "onClick: "+ mensagem);
+                                Log.d(TAG, "Resposta do servidor: " + resposta.toString());
                             }
                         });
 

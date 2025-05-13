@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("http://letcontrol.free.nf/letcontrolphp/login.php");
+                        URL url = new URL("https://e196-143-0-189-18.ngrok-free.app/letcontrolphp/login.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);
@@ -81,22 +81,21 @@ public class LoginActivity extends AppCompatActivity {
                         reader.close();
 
                         JSONObject json = new JSONObject(response.toString());
-                        String status = json.getString("status");
+
 
                         runOnUiThread(() -> {
-                            if (status.equals("ok")) {
-                                String token = null;
-                                try {
-                                    token = json.getString("token");
-                                } catch (JSONException e) {
-                                    throw new RuntimeException(e);
-                                }
-                                // Aqui você pode salvar o token no SharedPreferences, por exemplo.
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                intent.putExtra("token", token);
-                                startActivity(intent);
-                            } else {
-                                textViewErro.setText("Login inválido: " + json.optString("mensagem", "erro desconhecido"));
+                            try {
+                                String status = json.getString("status");
+                                runOnUiThread(() -> {
+                                    if (status.equals("ok")) {
+                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    } else {
+                                        textViewErro.setText("Login inválido.");
+                                    }
+                                });
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                runOnUiThread(() -> textViewErro.setText("Erro no JSON: " + e.getMessage()));
                             }
                         });
 
@@ -120,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonTesteTelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), TutorialFragmentsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ConnectingWifiActivity.class);
                 startActivity(intent);
             }
         });
