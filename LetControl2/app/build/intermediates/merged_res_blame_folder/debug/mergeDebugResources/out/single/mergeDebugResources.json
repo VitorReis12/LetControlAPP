@@ -1,0 +1,478 @@
+[
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_search_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_search_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_terms2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\terms2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_baseline_account_circle_24.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\baseline_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_wifi_tutorial.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\wifi_tutorial.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_bem_vindo_tutorial1.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_bem_vindo_tutorial1.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_connecting_wifi.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_connecting_wifi.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_4_right.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_4_right.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_star.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\star.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_perfil_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\perfil_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_tutorial_fragments.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_tutorial_fragments.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_aviso_new_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\aviso_new_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment__home.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment__home.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_background_remove_png.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\background_remove_png.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_message2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\message2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logo_image_png.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logo_image_png.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\navigation_nav_graph3_motivo.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\navigation\\nav_graph3_motivo.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_avisos_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\avisos_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_terms.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\terms.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_user_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_user_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_informe_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\informe_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logo_letcontrol.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logo_letcontrol.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_bottom_tutorial.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\bottom_tutorial.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_back.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_back.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_user.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_user.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_bottom_tutorial_color.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\bottom_tutorial_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_clock_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_clock_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_tutorial.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\navigation_nav_graph_1.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\navigation\\nav_graph_1.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_inicio_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\inicio_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logooficial_branco.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logooficial_branco.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_clock.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_clock.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_avisos_new_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\avisos_new_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_background_tela1_tutorial.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\background_tela1_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_content_tutorial.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\content_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_right2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_right2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_information.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_cardview_radius_top.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\cardview_radius_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_ritmo_atual.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_ritmo_atual.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_motivo_tutorial_3_.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_motivo_tutorial_3_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_bluetooth_tela2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\bluetooth_tela2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_button_login.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\button_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_grafico_mes_remove_png.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\grafico_mes_remove_png.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_perfil_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\perfil_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_user_account_circle_24.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\user_account_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_wifi__tutorial_.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_wifi__tutorial_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_second.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_termos.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_termos.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logo_solo_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logo_solo_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_cadastro.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_avisos_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\avisos_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logo_blue_big.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logo_blue_big.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\navigation_nav_graph_tela2bt.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\navigation\\nav_graph_tela2bt.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_bottom_tutuorial.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\bottom_tutuorial.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_lefttop_2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_lefttop_2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_right1.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_right1.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_left1.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_left1.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_transfer_raletorio.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\transfer_raletorio.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_duvidas.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\duvidas.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_search.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_search.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_check_tela1_bem.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\check_tela1_bem.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_share2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\share2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_left_4.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_left_4.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_back_gray_new_40.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_back_gray_new_40.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_first.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_first.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_right_solo_77.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_right_solo_77.png"
+    },
+    {
+        "merged": "com.example.letcontrol.app-debug-44:/layout_fragment_ritmo_atual.xml.flat",
+        "source": "com.example.letcontrol.app-main-46:/layout/fragment_ritmo_atual.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_not_warnings.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\not_warnings.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_statistics.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_inicio_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\inicio_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blurs1.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blurs1.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_home.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_home.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_buttons_user.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\buttons_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_vector_scan.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\vector_scan.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_tela2_bt_.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_tela2_bt_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blur_blue_4_torright.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blur_blue_4_torright.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_frame.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\frame.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_ellipse_progressbar.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\ellipse_progressbar.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_graphic_home_png.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\graphic_home_png.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_custom_thumb_warnings.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\custom_thumb_warnings.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_botton_tutorial.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\botton_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_dialog_layout_meta.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\dialog_layout_meta.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_right_tutorial.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_right_tutorial.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_informe_gray.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\informe_gray.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_right.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_share.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\share.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_privacy.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\privacy.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_circle_shape.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\circle_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_home_grey.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_home_grey.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_frame2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\frame2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_message.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\message.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_warnings.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_warnings.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_blurs2_mn.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\blurs2_mn.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_star2.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\star2.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_logo_letcontrolpng.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\logo_letcontrolpng.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\layout_fragment_user.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_li_pie_chart_blue.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\li_pie_chart_blue.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_arrow_right_solo.png.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\arrow_right_solo.png"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_buttons_mid.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\buttons_mid.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-debug-44:\\drawable_preogressbar_homepage_graphic.xml.flat",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\drawable\\preogressbar_homepage_graphic.xml"
+    }
+]

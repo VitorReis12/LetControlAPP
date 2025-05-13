@@ -1,0 +1,7 @@
+Array
+(
+    [nome] => gd
+    [email] => ud
+    [senha] => s
+    [estado] => SP
+)

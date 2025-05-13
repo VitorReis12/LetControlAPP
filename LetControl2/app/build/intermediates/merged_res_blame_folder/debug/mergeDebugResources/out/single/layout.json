@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_bem_vindo_tutorial1.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_bem_vindo_tutorial1.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_cadastro.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_wifi__tutorial_.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_wifi__tutorial_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\content_tutorial.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\content_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_termos.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_termos.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_second.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_motivo_tutorial_3_.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_motivo_tutorial_3_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_information.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_information.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment__home.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment__home.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_tutorial.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_tutorial.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_warnings.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_warnings.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_tutorial_fragments.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_tutorial_fragments.xml"
+    },
+    {
+        "merged": "com.example.letcontrol.app-mergeDebugResources-43:/layout/fragment_ritmo_atual.xml",
+        "source": "com.example.letcontrol.app-main-46:/layout/fragment_ritmo_atual.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_user.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_tela2_bt_.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_tela2_bt_.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\activity_connecting_wifi.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\activity_connecting_wifi.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_ritmo_atual.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_ritmo_atual.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\dialog_layout_meta.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\dialog_layout_meta.xml"
+    },
+    {
+        "merged": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-mergeDebugResources-43:\\layout\\fragment_first.xml",
+        "source": "C:\\Users\\vitor\\.gradle\\daemon\\8.11.1\\com.example.letcontrol.app-main-46:\\layout\\fragment_first.xml"
+    }
+]
