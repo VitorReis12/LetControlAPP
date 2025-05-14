@@ -1,0 +1,12 @@
+Array
+(
+    [Host] => 88b8-138-94-194-6.ngrok-free.app
+    [User-Agent] => Dalvik/2.1.0 (Linux; U; Android 15; 23129RA5FL Build/AQ3A.240829.003)
+    [Content-Length] => 34
+    [Accept-Encoding] => gzip
+    [Content-Language] => pt-BR
+    [Content-Type] => application/x-www-form-urlencoded;charset=utf-8
+    [X-Forwarded-For] => 143.0.189.114
+    [X-Forwarded-Host] => 88b8-138-94-194-6.ngrok-free.app
+    [X-Forwarded-Proto] => https
+)
