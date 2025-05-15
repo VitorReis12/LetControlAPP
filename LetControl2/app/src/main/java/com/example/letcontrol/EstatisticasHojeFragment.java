@@ -1,22 +1,19 @@
 package com.example.letcontrol;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link InformationFragment#newInstance} factory method to
+ * Use the {@link EstatisticasHojeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class InformationFragment extends Fragment {
+public class EstatisticasHojeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,11 +24,7 @@ public class InformationFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button buttonHoje, buttonMes, buttonAno;
-
-    EstatisticasMesFragment estatisticasMesFragment = new EstatisticasMesFragment();
-
-    public InformationFragment() {
+    public EstatisticasHojeFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +34,11 @@ public class InformationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchFragment.
+     * @return A new instance of fragment EstatisticasHojeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static InformationFragment newInstance(String param1, String param2) {
-        InformationFragment fragment = new InformationFragment();
+    public static EstatisticasHojeFragment newInstance(String param1, String param2) {
+        EstatisticasHojeFragment fragment = new EstatisticasHojeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,44 +55,10 @@ public class InformationFragment extends Fragment {
         }
     }
 
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_information, container, false);
-
-        buttonHoje = view.findViewById(R.id.buttonHojeEstatisticas);
-        buttonMes = view.findViewById(R.id.buttonMesEstatisticas);
-        buttonAno = view.findViewById(R.id.buttonAnoEstatisticas);
-
-        buttonHoje.setOnClickListener(V-> FragmentHoje());
-        buttonMes.setOnClickListener(V-> FragmentMes());
-        buttonAno.setOnClickListener(V-> FragmentAno());
-
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.add(R.id.frame_conteudo_estatisticas, estatisticasMesFragment);
-        transaction.commit();
-
-        return view;
+        return inflater.inflate(R.layout.fragment_estatisticas_hoje, container, false);
     }
-
-    public void FragmentHoje(){
-
-
-    }
-    public void FragmentMes(){
-
-
-    }
-    public void FragmentAno(){
-
-
-    }
-
-
-
-
-
-
 }

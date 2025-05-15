@@ -6,6 +6,6 @@
 
     android:useLevel="false">
 
-    <solid android:color="@color/progressbar_off"/>
+    <solid android:color="#1FC472"/>
 
 </shape>

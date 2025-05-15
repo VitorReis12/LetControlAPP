@@ -9,17 +9,13 @@
         android:thickness="12dp"
         android:useLevel="true">
 
-        <gradient
-            android:angle="0"
-            android:endColor="@color/endBlue_progressbar"
-            android:centerColor="@color/endBlue_progressbar"
-            android:startColor="@color/startBlue_progressbar"
-            android:type="sweep"
-            android:useLevel="false"/>
+        <solid android:color="#08B0FC"/>
+
 
 
 
     </shape>
+
 
 
 </rotate>
