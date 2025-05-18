@@ -1,6 +1,7 @@
 package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -30,6 +31,8 @@ public class InformationFragment extends Fragment {
     Button buttonHoje, buttonMes, buttonAno;
 
     EstatisticasMesFragment estatisticasMesFragment = new EstatisticasMesFragment();
+    EstatisticasAnoFragment estatisticasAnoFragment = new EstatisticasAnoFragment();
+    EstatisticasHojeFragment estatisticasHojeFragment = new EstatisticasHojeFragment();
 
     public InformationFragment() {
         // Required empty public constructor
@@ -86,15 +89,47 @@ public class InformationFragment extends Fragment {
 
     public void FragmentHoje(){
 
+        ResetButton();
+        buttonHoje.setBackgroundResource(R.drawable.button_branco_estatisticas);
+        buttonHoje.setTextColor(Color.parseColor("#16ACF8"));
+
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_conteudo_estatisticas,estatisticasHojeFragment);
+        transaction.commit();
+
 
     }
     public void FragmentMes(){
+
+        ResetButton();
+        buttonMes.setBackgroundResource(R.drawable.button_branco_estatisticas);
+        buttonMes.setTextColor(Color.parseColor("#16ACF8"));
+
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_conteudo_estatisticas,estatisticasMesFragment);
+        transaction.commit();
 
 
     }
     public void FragmentAno(){
 
+        ResetButton();
+        buttonAno.setBackgroundResource(R.drawable.button_branco_estatisticas);
+        buttonAno.setTextColor(Color.parseColor("#16ACF8"));
 
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_conteudo_estatisticas,estatisticasAnoFragment);
+        transaction.commit();
+
+    }
+
+    public void ResetButton(){
+        buttonHoje.setBackgroundResource(R.drawable.button_transparente);
+        buttonAno.setBackgroundResource(R.drawable.button_transparente);
+        buttonMes.setBackgroundResource(R.drawable.button_transparente);
+        buttonHoje.setTextColor(Color.parseColor("#ffffff"));
+        buttonAno.setTextColor(Color.parseColor("#ffffff"));
+        buttonMes.setTextColor(Color.parseColor("#ffffff"));
     }
 
 

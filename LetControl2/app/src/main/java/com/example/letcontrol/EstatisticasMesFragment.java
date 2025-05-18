@@ -1,5 +1,8 @@
 package com.example.letcontrol;
 
+import static java.util.Objects.*;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +10,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.text.MessageFormat;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +35,9 @@ public class EstatisticasMesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    public ProgressBar progressBar;
+    Button buttonMeta;
 
     public EstatisticasMesFragment() {
         // Required empty public constructor
@@ -55,10 +70,42 @@ public class EstatisticasMesFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_estatisticas_mes, container, false);
+        View view = inflater.inflate(R.layout.fragment_estatisticas_mes, container, false);
+        progressBar = view.findViewById(R.id.progressBar);
+        buttonMeta = view.findViewById(R.id.buttonMeta);
+        buttonMeta.setOnClickListener(V -> AbrirDialog());
+        return view;
+    }
+
+
+
+    public void AbrirDialog() {
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_layout_meta, null);
+        TextInputEditText editText = dialogView.findViewById(R.id.editText);
+
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Alterar Minha Meta")
+                .setView(dialogView)
+                .setPositiveButton("OK", (dialog, which) -> {
+                    String input = String.valueOf(editText.getText());
+
+                    if (!input.isEmpty()) {
+                        try {
+                            int valor = Integer.parseInt(input);
+                            progressBar.setProgress(valor);
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(requireContext(), "Digite um número válido", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "O campo não pode estar vazio", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Fechar", (dialog, which) -> dialog.dismiss())
+                .show();
     }
 }

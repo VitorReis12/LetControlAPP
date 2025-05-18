@@ -114,7 +114,7 @@ public class CadastroActivity extends AppCompatActivity {
 
                         User.setEmail(email);
 
-                        URL url = new URL("https://e196-143-0-189-18.ngrok-free.app/letcontrolphp/cadastro.php");
+                        URL url = new URL("https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/cadastro.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);

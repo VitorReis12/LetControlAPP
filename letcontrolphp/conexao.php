@@ -2,6 +2,8 @@
 
 session_start();
 
+
+
 header("Content-Type: application/json");
 file_put_contents("logconx.txt", json_encode($_GET) . PHP_EOL, FILE_APPEND);
 

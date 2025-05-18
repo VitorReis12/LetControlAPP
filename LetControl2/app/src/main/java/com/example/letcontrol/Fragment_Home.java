@@ -2,11 +2,13 @@ package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +16,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.textfield.TextInputEditText;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.text.MessageFormat;
-import java.util.Objects;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,7 +49,7 @@ public class Fragment_Home extends Fragment {
 
     public ImageView imageViewAccount;
 
-    private Button buttonHome, buttonUser, buttonInformation, buttonWarnings, buttonRitmoAtual;
+    private Button buttonHome, buttonUser, buttonInformation, buttonWarnings, buttonRitmoAtual, buttonVerMetas;
     public UserFragment accontFragment;
 
     public String TextMeta = "";
@@ -101,6 +106,7 @@ public class Fragment_Home extends Fragment {
 //        textViewDialog = view.findViewById(R.id.textViewDialog);
 //        textViewDialog.setOnClickListener(v -> AbrirDialog());
 
+        buttonVerMetas = view.findViewById(R.id.buttonVerMetas);
         buttonWarnings = view.findViewById(R.id.buttonAvisos);
         buttonUser = view.findViewById(R.id.buttonPerfil);
         buttonHome = view.findViewById(R.id.buttonInicio);
@@ -113,10 +119,12 @@ public class Fragment_Home extends Fragment {
         buttonRitmoAtual = view.findViewById(R.id.button_ritmo_atual);
 
 
+        buttonVerMetas.setOnClickListener(V -> VerMetas());
         imageViewAccount.setOnClickListener(v -> FrameAccount());
         buttonRitmoAtual.setOnClickListener(v -> RitmoAtual());
-        return view;
 
+
+        return view;
     }
 
     //Senha do apk é "letcontrol"
@@ -128,17 +136,11 @@ public class Fragment_Home extends Fragment {
 
     public void FrameAccount() {
 
-        try {
-            ResetText();
-            ResetButton();
-            textViewUser.setTextColor(Color.parseColor("#2CB4ED"));
-            buttonUser.setBackgroundResource(R.drawable.perfil_blue);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Toast.makeText(getContext(), e + "", Toast.LENGTH_SHORT).show();
-        }
 
-
+//        textViewUser.setTextColor(Color.parseColor("#2CB4ED"));
+//        buttonUser.setBackgroundResource(R.drawable.perfil_blue);
+//
+//
         androidx.fragment.app.FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_conteudo, new UserFragment());
         transaction.commit();
@@ -152,6 +154,11 @@ public class Fragment_Home extends Fragment {
     }
 
 
+    public void VerMetas(){
+        androidx.fragment.app.FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_conteudo, new InformationFragment());
+        transaction.commit();
+    }
     public void ResetText() {
         textViewHome.setTextColor(Color.parseColor("#BFC0C2"));
         textViewUser.setTextColor(Color.parseColor("#BFC0C2"));

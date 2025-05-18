@@ -2,6 +2,7 @@ package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import android.view.View;
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://e196-143-0-189-18.ngrok-free.app/letcontrolphp/login.php");
+                        URL url = new URL("https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/login.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);
@@ -69,6 +70,11 @@ public class LoginActivity extends AppCompatActivity {
                         os.write(postData.getBytes());
                         os.flush();
                         os.close();
+
+                        SharedPreferences preferences = getSharedPreferences("login",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("email", email);
+                        editor.apply();
 
                         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         StringBuilder response = new StringBuilder();
