@@ -2,6 +2,7 @@ package com.example.letcontrol;
 
 import static java.util.Objects.*;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
@@ -10,8 +11,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -38,6 +43,8 @@ public class EstatisticasMesFragment extends Fragment {
 
     public ProgressBar progressBar;
     Button buttonMeta;
+
+    TextView textViewMeta;
 
     public EstatisticasMesFragment() {
         // Required empty public constructor
@@ -77,8 +84,20 @@ public class EstatisticasMesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_estatisticas_mes, container, false);
         progressBar = view.findViewById(R.id.progressBar);
+        textViewMeta = view.findViewById(R.id.textViewMetaProgresbar);
         buttonMeta = view.findViewById(R.id.buttonMeta);
         buttonMeta.setOnClickListener(V -> AbrirDialog());
+
+        Animation scaleUp = AnimationUtils.loadAnimation(getContext(), R.anim.scale_up);
+        progressBar.startAnimation(scaleUp);
+
+        int targetProgress = 30000;
+
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, targetProgress);
+        animation.setDuration(1500); // duração da animação (1.5s)
+        animation.setInterpolator(new DecelerateInterpolator()); // animação suave
+        animation.start();
+
         return view;
     }
 
@@ -98,6 +117,7 @@ public class EstatisticasMesFragment extends Fragment {
                         try {
                             int valor = Integer.parseInt(input);
                             progressBar.setProgress(valor);
+                            textViewMeta.setText(String.valueOf(valor));
                         } catch (NumberFormatException e) {
                             Toast.makeText(requireContext(), "Digite um número válido", Toast.LENGTH_SHORT).show();
                         }

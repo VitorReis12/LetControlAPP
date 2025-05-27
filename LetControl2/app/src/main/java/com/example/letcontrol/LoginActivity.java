@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/login.php");
+                        URL url = new URL("https://1c79-143-0-189-24.ngrok-free.app/letcontrolphp/login.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);
@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("email", email);
                         editor.apply();
+
 
                         BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                         StringBuilder response = new StringBuilder();

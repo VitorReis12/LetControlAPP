@@ -19,91 +19,157 @@
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:text="Termos e política de privacidade"
-        android:textSize="20sp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:text="Termos e Condições"
+        android:textSize="27sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewArrowBack"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textViewAcessarPolitica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Revise os Termos e Condições"
+        android:layout_marginBottom="24dp"
+        android:text="Política de Privacidade"
         android:textColor="#00A4F6"
-        android:textSize="18sp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:text="1. Aceitação do termos"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="2. Descrição do serviço"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="3. Você se compromete a:"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text="Sua privacidade é importante para nós. A política da Brainstorming é respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar em nosso site e em outros sites que possuímos e operamos."
-        android:textSize="17sp"
+        android:layout_marginTop="24dp"
+        android:text="4. Responsabilidade do usuário"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintTop_toBottomOf="@+id/textView43" />
 
     <TextView
         android:id="@+id/textView28"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text=" Solicitamos informações pessoais somente quando realmente precisamos delas para lhe prestar um serviço. Coletamos essas informações por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que as coletamos e como serão utilizadas."
+        android:text="Ao criar uma conta ou utilizar o LetControl, você declara estar de acordo com estes Termos e Condições. Caso não concorde, por favor, não utilize o serviço"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="24dp"
-        android:gravity="center"
-        android:text=" Nós somente retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado."
+        android:text="O LetControl é uma solução para monitoramento de consumo de água residencial, oferecendo visualização em tempo real e envio de dados via aplicativo ou site."
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="Termos e Condições"
-        android:textColor="#00A4F6"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="• Fornecer informações corretas no cadastro;"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <TextView
         android:id="@+id/textView31"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Política de Privacidade"
-        android:textColor="#00A4F6"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Você é responsável por manter a segurança da sua conta, como senha e acesso ao dispositivo. O uso indevido por terceiros será de sua responsabilidade. "
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="• Não usar o sistema para fins ilegais ou abusivos;"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="• Respeitar a integridade dos dados e sistemas do LetControl."
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

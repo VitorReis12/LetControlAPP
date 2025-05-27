@@ -16,12 +16,15 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo_solo_blue"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@drawable/logo_solo_blue"
         android:supportsRtl="true"
         android:theme="@style/Theme.LetControl"
-        tools:targetApi="31"
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".PoliticaActivity"
+            android:exported="false" />
         <activity
             android:name=".TutorialFragmentsActivity"
             android:exported="false" />
@@ -50,7 +53,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

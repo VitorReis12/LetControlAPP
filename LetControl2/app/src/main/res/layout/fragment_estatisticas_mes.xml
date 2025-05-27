@@ -48,7 +48,7 @@
             android:id="@+id/textView54"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30.000L"
+            android:text="00.000L"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/progressBar"
@@ -67,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
         <TextView
-            android:id="@+id/textView56"
+            android:id="@+id/textViewMetaProgresbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30.000L"
@@ -83,7 +83,7 @@
             android:layout_height="77dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="7dp"
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline26"
             app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +109,7 @@
                     android:id="@+id/textView62"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="54.750 Litros"
+                    android:text="00.000 Litros"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +128,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="77dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="7dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="24dp"
             app:cardCornerRadius="12dp"
@@ -155,9 +155,10 @@
 
                 <TextView
                     android:id="@+id/textView63"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="5.400.750 mL"
+                    android:layout_marginStart="12dp"
+                    android:text="0.000.000 mL"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -194,8 +195,8 @@
             android:background="@drawable/circle_shape"
             android:elevation="7px"
             android:indeterminate="false"
-            android:max="100"
-            android:progress="70"
+            android:max="100000"
+            android:progress="30000"
             android:progressDrawable="@drawable/preogressbar_homepage_graphic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -207,8 +208,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="47dp"
             app:cardBackgroundColor="#08B0FC"
-            app:layout_constraintEnd_toStartOf="@+id/cardView3"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline29"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar">
 
@@ -243,7 +243,7 @@
             android:layout_marginTop="47dp"
             app:cardBackgroundColor="#1FC472"
             app:layout_constraintEnd_toStartOf="@+id/guideline26"
-            app:layout_constraintStart_toEndOf="@+id/cardView5"
+            app:layout_constraintStart_toStartOf="@+id/guideline29"
             app:layout_constraintTop_toBottomOf="@+id/progressBar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -262,6 +262,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

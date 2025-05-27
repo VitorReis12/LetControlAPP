@@ -1,5 +1,7 @@
 package com.example.letcontrol;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class UserFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    public TextView MeuPerfil, TermosECondicoes, PoliticaDePrivacidade, Logout, RedeDoAparelho;
 
     public UserFragment() {
         // Required empty public constructor
@@ -55,10 +60,42 @@ public class UserFragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+        View view = inflater.inflate(R.layout.fragment_user, container, false);
+
+        MeuPerfil = view.findViewById(R.id.textViewMeuPerfil);
+        TermosECondicoes = view.findViewById(R.id.textViewTermosECondicoes);
+        PoliticaDePrivacidade = view.findViewById(R.id.textViewPoliticaDePrivacidade);
+        Logout = view.findViewById(R.id.logout);
+        RedeDoAparelho = view.findViewById(R.id.textViewRedeDoAprarelho);
+
+        Logout.setOnClickListener(V -> logouttext());
+        TermosECondicoes.setOnClickListener(V -> AbrirTermos());
+        PoliticaDePrivacidade.setOnClickListener(V -> AbrirPoliticas());
+        RedeDoAparelho.setOnClickListener(V -> Rede());
+        return view;
     }
+
+    public void logouttext(){
+        requireActivity().finish();
+    }
+
+    public void AbrirTermos(){
+        Intent intent = new Intent(getContext(), TermosActivity.class);
+        startActivity(intent);
+    }
+
+    public void AbrirPoliticas(){
+        Intent intent = new Intent(getContext(), PoliticaActivity.class);
+        startActivity(intent);
+    }
+
+    public void Rede(){
+      Intent intent = new Intent(getContext(), ConnectingWifiActivity.class);
+      startActivity(intent);
+    };
 }

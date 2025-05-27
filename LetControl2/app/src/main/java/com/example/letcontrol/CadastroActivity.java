@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,7 +69,7 @@ public class CadastroActivity extends AppCompatActivity {
 
 
         buttonCadastrar.setEnabled(false);
-        buttonCadastrar.setBackgroundColor(Color.parseColor("#7BB4CC"));
+        buttonCadastrar.setBackgroundResource(R.drawable.button_off_cadastro);
 
 
         textViewActivityPoliticas.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +115,13 @@ public class CadastroActivity extends AppCompatActivity {
 
                         User.setEmail(email);
 
-                        URL url = new URL("https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/cadastro.php");
+
+                        SharedPreferences preferences = getSharedPreferences("cadastro", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("nomecadastro", nome);
+                        editor.apply();
+
+                        URL url = new URL("https://1c79-143-0-189-24.ngrok-free.app/letcontrolphp/cadastro.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);

@@ -1,5 +1,7 @@
 package com.example.letcontrol;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,8 @@ public class Bem_vindo_tutorial1Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView textViewBemVindo;
 
     public Bem_vindo_tutorial1Fragment() {
         // Required empty public constructor
@@ -55,10 +60,24 @@ public class Bem_vindo_tutorial1Fragment extends Fragment {
         }
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bem_vindo_tutorial1, container, false);
+
+
+
+        View view =inflater.inflate(R.layout.fragment_bem_vindo_tutorial1, container, false);
+        textViewBemVindo = view.findViewById(R.id.textViewTTBemVindo);
+
+
+        SharedPreferences prefs = requireActivity().getSharedPreferences("nomecadastro", android.content.Context.MODE_PRIVATE);
+
+        String nome = prefs.getString("nomecadastro", null);
+
+        textViewBemVindo.setText("Bem Vindo, " + nome + "!");
+
+        return view;
     }
 }

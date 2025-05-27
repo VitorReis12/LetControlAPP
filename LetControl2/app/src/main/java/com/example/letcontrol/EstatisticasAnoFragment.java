@@ -1,5 +1,6 @@
 package com.example.letcontrol;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +38,11 @@ public class EstatisticasAnoFragment extends Fragment {
     public EstatisticasAnoFragment() {
         // Required empty public constructor
     }
+
+    public ProgressBar progressBar;
+    TextView textViewMeta;
+    Button buttonMeta;
+
 
     /**
      * Use this factory method to create a new instance of
@@ -59,6 +75,50 @@ public class EstatisticasAnoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_estatisticas_ano, container, false);
+        View view = inflater.inflate(R.layout.fragment_estatisticas_ano, container, false);
+
+        progressBar = view.findViewById(R.id.progressBar3);
+        textViewMeta = view.findViewById(R.id.textViewMetaAno);
+        buttonMeta = view.findViewById(R.id.buttonMetaAno);
+        buttonMeta.setOnClickListener(V -> AbrirDialog());
+
+        int targetProgress = 30000;
+
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, targetProgress);
+        animation.setDuration(1500); // duração da animação (1.5s)
+        animation.setInterpolator(new DecelerateInterpolator()); // animação suave
+        animation.start();
+
+        Animation scaleUp = AnimationUtils.loadAnimation(getContext(), R.anim.scale_up);
+        progressBar.startAnimation(scaleUp);
+
+        return view;
     }
+
+    public void AbrirDialog() {
+        View dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_layout_meta, null);
+        TextInputEditText editText = dialogView.findViewById(R.id.editText);
+
+        new MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Alterar Minha Meta")
+                .setView(dialogView)
+                .setPositiveButton("OK", (dialog, which) -> {
+                    String input = String.valueOf(editText.getText());
+
+                    if (!input.isEmpty()) {
+                        try {
+                            int valor = Integer.parseInt(input);
+                            progressBar.setProgress(valor);
+                            textViewMeta.setText(String.valueOf(valor));
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(requireContext(), "Digite um número válido", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "O campo não pode estar vazio", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Fechar", (dialog, which) -> dialog.dismiss())
+                .show();
+    }
+
 }

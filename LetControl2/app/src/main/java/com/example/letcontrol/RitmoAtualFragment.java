@@ -1,9 +1,11 @@
 package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -46,7 +48,7 @@ public class RitmoAtualFragment extends Fragment {
     public TextView back_home;
 
     private final android.os.Handler handler = new android.os.Handler();
-    private final int intervaloAtualizacao = 15000; // 15 segundos
+    private final int intervaloAtualizacao = 15000;
     private Runnable atualizadorConsumo;
 
     public RitmoAtualFragment() {
@@ -119,7 +121,7 @@ public class RitmoAtualFragment extends Fragment {
         if (email != null) {
             new Thread(() -> {
                 try {
-                    String link = "https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
+                    String link = "https://cc18-143-0-190-58.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
                     URL url = new URL(link);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
@@ -167,19 +169,27 @@ public class RitmoAtualFragment extends Fragment {
     }
 
     public void BackHome(){
+
+        handler.removeCallbacks(atualizadorConsumo);
+
         FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_conteudo, new Fragment_Home());
+        transaction.addToBackStack(null);
         transaction.commit();
+
     }
 
+
+
     private void buscarDadosConsumo() {
+        if (!isAdded()) return;
         SharedPreferences prefs = requireActivity().getSharedPreferences("login", android.content.Context.MODE_PRIVATE);
         String email = prefs.getString("email", null);
 
         if (email != null) {
             new Thread(() -> {
                 try {
-                    String link = "https://fd1d-143-0-189-248.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
+                    String link = "https://1c79-143-0-189-24.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
                     URL url = new URL(link);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
