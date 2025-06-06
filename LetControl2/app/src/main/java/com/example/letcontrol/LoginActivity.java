@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://1c79-143-0-189-24.ngrok-free.app/letcontrolphp/login.php");
+                        URL url = new URL("https://6b3d-143-0-189-182.ngrok-free.app/letcontrolphp/login.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);

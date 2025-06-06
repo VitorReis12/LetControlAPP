@@ -6,5 +6,6 @@
 
     <color name="startBlue_progressbar">#0A98FF</color>
     <color name="progressbar_off">#CDF8F6</color>
+    <color name="blue_progessbar">#0CB4E8</color>
 
 </resources>

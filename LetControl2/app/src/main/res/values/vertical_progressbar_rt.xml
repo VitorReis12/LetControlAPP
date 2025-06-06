@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="VerticalProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+<!--        <item name="android:rotation">270</item>-->
+        <item name="android:progressTint">@color/blue_progessbar</item>
+
+        <item name="android:progressDrawable">@drawable/progress_rounded</item>
+        <item name="android:progress">
+
+        </item>
+    </style>
+</resources>

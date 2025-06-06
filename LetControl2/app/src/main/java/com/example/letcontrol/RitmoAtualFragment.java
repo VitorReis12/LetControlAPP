@@ -121,7 +121,7 @@ public class RitmoAtualFragment extends Fragment {
         if (email != null) {
             new Thread(() -> {
                 try {
-                    String link = "https://cc18-143-0-190-58.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
+                    String link = "https://f5e0-138-94-194-66.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
                     URL url = new URL(link);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
@@ -189,7 +189,7 @@ public class RitmoAtualFragment extends Fragment {
         if (email != null) {
             new Thread(() -> {
                 try {
-                    String link = "https://1c79-143-0-189-24.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
+                    String link = "https://caca-138-94-194-166.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
                     URL url = new URL(link);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");

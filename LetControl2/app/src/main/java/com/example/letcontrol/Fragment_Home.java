@@ -2,6 +2,7 @@ package com.example.letcontrol;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -182,10 +183,8 @@ public class Fragment_Home extends Fragment {
 
     public void RitmoAtual(){
 
-        androidx.fragment.app.FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_conteudo, new RitmoAtualFragment());
-        transaction.commit();
-
+        Intent intent = new Intent(getContext(), FluxoAtualActivity.class);
+        startActivity(intent);
 
     }
 

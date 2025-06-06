@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -29,11 +31,14 @@ public class InformationFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button buttonHoje, buttonMes, buttonAno;
+    ImageButton buttonConsumo, buttonGastos, buttonMetas;
 
-    EstatisticasMesFragment estatisticasMesFragment = new EstatisticasMesFragment();
-    EstatisticasAnoFragment estatisticasAnoFragment = new EstatisticasAnoFragment();
-    EstatisticasHojeFragment estatisticasHojeFragment = new EstatisticasHojeFragment();
+    TextView textViewConsumo, textViewGastos, textViewMetas;
+
+    ConsumoFragment consumoFragment = new ConsumoFragment();
+    GastosFragment gastosFragment = new GastosFragment();
+
+    MetasFragment metasFragment = new MetasFragment();
 
     public InformationFragment() {
         // Required empty public constructor
@@ -75,16 +80,20 @@ public class InformationFragment extends Fragment {
 
             View view = inflater.inflate(R.layout.fragment_information, container, false);
 
-            buttonHoje = view.findViewById(R.id.buttonHojeEstatisticas);
-            buttonMes = view.findViewById(R.id.buttonMesEstatisticas);
-            buttonAno = view.findViewById(R.id.buttonAnoEstatisticas);
+            buttonConsumo = view.findViewById(R.id.ButtonConsumoRT);
+            buttonGastos = view.findViewById(R.id.ButtonGastosRT);
+            buttonMetas = view.findViewById(R.id.ButtonMetasRT);
 
-            buttonHoje.setOnClickListener(V-> FragmentHoje());
-            buttonMes.setOnClickListener(V-> FragmentMes());
-            buttonAno.setOnClickListener(V-> FragmentAno());
+            textViewConsumo = view.findViewById(R.id.textViewConsumoRT);
+            textViewGastos = view.findViewById(R.id.textViewGastosRT);
+            textViewMetas = view.findViewById(R.id.textViewMetasRT);
+
+            buttonConsumo.setOnClickListener(V-> FragmentConsumo());
+            buttonGastos.setOnClickListener(V-> FragmentGastos());
+            buttonMetas.setOnClickListener(V-> FragmentMetas());
 
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_conteudo_estatisticas, new EstatisticasMesFragment());
+            transaction.replace(R.id.frame_conteudo_estatisticas, consumoFragment);
             transaction.commit();
 
             return view;
@@ -92,14 +101,14 @@ public class InformationFragment extends Fragment {
 
     }
 
-    public void FragmentHoje(){
+    public void FragmentConsumo(){
         try {
             ResetButton();
-            buttonHoje.setBackgroundResource(R.drawable.button_branco_estatisticas);
-            buttonHoje.setTextColor(Color.parseColor("#16ACF8"));
+            buttonConsumo.setBackgroundResource(R.drawable.button_relatorio);
+            textViewConsumo.setTextColor(Color.parseColor("#0A98FF"));
 
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_conteudo_estatisticas,estatisticasHojeFragment);
+            transaction.replace(R.id.frame_conteudo_estatisticas,consumoFragment);
             transaction.commit();
         } catch (Exception e) {
             Toast.makeText(getContext(), "Cuidado ao Utilizar o App", Toast.LENGTH_SHORT).show();
@@ -108,15 +117,15 @@ public class InformationFragment extends Fragment {
 
 
     }
-    public void FragmentMes() {
+    public void FragmentGastos() {
         try {
             if (isAdded() && getActivity() != null && !getActivity().isFinishing()) {
                 ResetButton();
-                buttonMes.setBackgroundResource(R.drawable.button_branco_estatisticas);
-                buttonMes.setTextColor(Color.parseColor("#16ACF8"));
+                buttonGastos.setBackgroundResource(R.drawable.button_relatorio);
+                textViewGastos.setTextColor(Color.parseColor("#0A98FF"));
 
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_conteudo_estatisticas, estatisticasMesFragment);
+                transaction.replace(R.id.frame_conteudo_estatisticas, gastosFragment);
                 transaction.commit(); // ou .commitAllowingStateLoss() se preferir
             }
         } catch (Exception e) {
@@ -124,15 +133,15 @@ public class InformationFragment extends Fragment {
         }
     }
 
-    public void FragmentAno(){
+    public void FragmentMetas(){
 
         try {
             ResetButton();
-            buttonAno.setBackgroundResource(R.drawable.button_branco_estatisticas);
-            buttonAno.setTextColor(Color.parseColor("#16ACF8"));
+            buttonMetas.setBackgroundResource(R.drawable.button_relatorio);
+            textViewMetas.setTextColor(Color.parseColor("#0A98FF"));
 
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-            transaction.replace(R.id.frame_conteudo_estatisticas,estatisticasAnoFragment);
+            transaction.replace(R.id.frame_conteudo_estatisticas, metasFragment);
             transaction.commit();
         } catch (Exception e) {
             Toast.makeText(getContext(), "Cuidado ao Utilizar o App", Toast.LENGTH_SHORT).show();
@@ -144,12 +153,13 @@ public class InformationFragment extends Fragment {
 
     public void ResetButton(){
         try {
-            buttonHoje.setBackgroundResource(R.drawable.button_transparente);
-            buttonAno.setBackgroundResource(R.drawable.button_transparente);
-            buttonMes.setBackgroundResource(R.drawable.button_transparente);
-            buttonHoje.setTextColor(Color.parseColor("#ffffff"));
-            buttonAno.setTextColor(Color.parseColor("#ffffff"));
-            buttonMes.setTextColor(Color.parseColor("#ffffff"));
+            buttonConsumo.setBackgroundResource(R.drawable.button_relatorio_gray);
+            buttonGastos.setBackgroundResource(R.drawable.button_relatorio_gray);
+            buttonMetas.setBackgroundResource(R.drawable.button_relatorio_gray);
+            textViewConsumo.setTextColor(Color.parseColor("#757474"));
+            textViewGastos.setTextColor(Color.parseColor("#757474"));
+            textViewMetas.setTextColor(Color.parseColor("#757474"));
+
         } catch (Exception e) {
             Toast.makeText(getContext(), "Cuidado ao Utilizar o App", Toast.LENGTH_SHORT).show();
         }
