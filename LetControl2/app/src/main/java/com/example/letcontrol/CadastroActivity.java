@@ -82,124 +82,105 @@ public class CadastroActivity extends AppCompatActivity {
         });
 
 
-        buttonCadastrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        buttonCadastrar.setOnClickListener(view -> {
 
-                if (inputNome.getText().toString().isEmpty() ||
-                        inputEmail.getText().toString().isEmpty() ||
-                        inputSenha.getText().toString().isEmpty() ||
-                        inputCfSenha.getText().toString().isEmpty()) {
+            if (inputNome.getText().toString().isEmpty() ||
+                    inputEmail.getText().toString().isEmpty() ||
+                    inputSenha.getText().toString().isEmpty() ||
+                    inputCfSenha.getText().toString().isEmpty()) {
 
-                    Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
-                    return;
-                }
+                Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
+                return;
+            }
 
+            String nome = inputNome.getText().toString().trim();
+            String email = inputEmail.getText().toString().trim();
+            String senha = inputSenha.getText().toString().trim();
+            String cfSenha = inputCfSenha.getText().toString().trim();
 
-                new Thread(() -> {
-                    try {
+            SharedPreferences preferences = getSharedPreferences("cadastro",MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("email", email);
+            editor.apply();
 
-                        String nome = inputNome.getText().toString().trim();
-                        String email = inputEmail.getText().toString().trim();
-                        String senha = inputSenha.getText().toString().trim();
-                        String cfSenha = inputCfSenha.getText().toString().trim();
+            SharedPreferences preferences2 = getSharedPreferences("cadastro2",MODE_PRIVATE);
+            SharedPreferences.Editor editor2 = preferences.edit();
+            editor.putString("nome", nome);
+            editor.apply();
 
+            if (!senha.equals(cfSenha)) {
+                Toast.makeText(getApplicationContext(), "As senhas não coincidem", Toast.LENGTH_LONG).show();
+                return;
+            }
 
+            new Thread(() -> {
+                try {
+                    String estado = "SP";
 
-                        String estado = "SP";
+                    String postData = "nome=" + URLEncoder.encode(nome, "UTF-8") +
+                            "&email=" + URLEncoder.encode(email, "UTF-8") +
+                            "&senha=" + URLEncoder.encode(senha, "UTF-8") +
+                            "&estado=" + URLEncoder.encode(estado, "UTF-8");
 
-                        String postData = "nome=" + URLEncoder.encode(nome, "UTF-8") +
-                                "&email=" + URLEncoder.encode(email, "UTF-8") +
-                                "&senha=" + URLEncoder.encode(senha, "UTF-8") +
-                                "&estado=" + URLEncoder.encode(estado, "UTF-8");
+                    URL url = new URL("https://88ff-177-23-2-16.ngrok-free.app/letcontrolphp/cadastro.php");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("POST");
+                    conn.setDoOutput(true);
+                    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+                    conn.setRequestProperty("Content-Length", String.valueOf(postData.getBytes().length));
+                    conn.setRequestProperty("Content-Language", "pt-BR");
+                    conn.setUseCaches(false);
 
-                        User.setEmail(email);
-
-
-                        SharedPreferences preferences = getSharedPreferences("cadastro", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("nomecadastro", nome);
-                        editor.apply();
-
-                        URL url = new URL("https://6b3d-143-0-189-182.ngrok-free.app/letcontrolphp/cadastro.php");
-                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                        conn.setRequestMethod("POST");
-                        conn.setDoOutput(true);
-                        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");//1
-                        conn.setRequestProperty("Content-Length", String.valueOf(postData.getBytes().length));
-                        conn.setRequestProperty("Content-Language", "pt-BR");
-                        conn.setUseCaches(false);
-                        conn.setDoInput(true);
-                        conn.setDoOutput(true);
-
-
-                        if (!senha.equals(cfSenha)) {
-                            runOnUiThread(() ->
-                                    Toast.makeText(getApplicationContext(), "As senhas não coincidem", Toast.LENGTH_LONG).show()
-                            );
-                            return;
-                        }
-
-
-
-                        OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream(), "utf-8");
+                    try (OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream(), "utf-8")) {
                         os.write(postData);
                         os.flush();
-                        os.close();
+                    }
 
-                        Log.d("POST_DATA", postData);
-
-                        InputStream inputStream = conn.getInputStream();
-                        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
-
+                    StringBuilder resposta = new StringBuilder();
+                    try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"))) {
                         String line;
-                        StringBuffer resposta = new StringBuffer();
-
-                        while((line = bufferedReader.readLine()) != null) {
+                        while ((line = bufferedReader.readLine()) != null) {
                             resposta.append(line);
-                            resposta.append('\r');
                         }
+                    }
+                    conn.disconnect();
 
-                        bufferedReader.close();
-                        conn.disconnect();
+                    JSONObject json = new JSONObject(resposta.toString());
+                    String status = json.getString("status");
 
-                        JSONObject json = new JSONObject(resposta.toString());
-                        String status = json.getString("status");
-
+                    if (!isFinishing() && !isDestroyed()) {
                         runOnUiThread(() -> {
                             if (status.equals("ok")) {
-                                String token = null;
-                                try {
-                                    token = json.getString("user");
-                                } catch (JSONException e) {
-                                    throw new RuntimeException(e);
-
-                                }
+                                String token = json.optString("usuario_id", ""); // corrigido aqui
 
                                 Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), TutorialFragmentsActivity.class);
                                 intent.putExtra("user", token);
-                                finish();
                                 startActivity(intent);
+                                finish();
+
                                 Log.d(TAG, "Resposta do servidor: " + resposta.toString());
-                                Log.d("Servidor", "Resposta bruta: " + resposta);
+
                             } else {
                                 String mensagem = json.optString("mensagem", "Erro desconhecido");
                                 Toast.makeText(getApplicationContext(), "Erro: " + mensagem, Toast.LENGTH_LONG).show();
-                                Log.d(TAG, "onClick: "+ mensagem);
+                                Log.d(TAG, "Erro: " + mensagem);
                                 Log.d(TAG, "Resposta do servidor: " + resposta.toString());
                             }
                         });
+                    }
 
-                    } catch (Exception e) {
+                } catch (Exception e) {
+                    if (!isFinishing() && !isDestroyed()) {
                         runOnUiThread(() ->
                                 Toast.makeText(getApplicationContext(), "Erro de conexão: " + e.getMessage(), Toast.LENGTH_LONG).show()
                         );
-                        e.printStackTrace();
                     }
-                }).start();
-            }
+                    e.printStackTrace();
+                }
+            }).start();
         });
+
 
 
         checkBoxTermos.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -72,9 +72,9 @@ public class Bem_vindo_tutorial1Fragment extends Fragment {
         textViewBemVindo = view.findViewById(R.id.textViewTTBemVindo);
 
 
-        SharedPreferences prefs = requireActivity().getSharedPreferences("nomecadastro", android.content.Context.MODE_PRIVATE);
+        SharedPreferences prefs = requireActivity().getSharedPreferences("cadastro2", android.content.Context.MODE_PRIVATE);
 
-        String nome = prefs.getString("nomecadastro", null);
+        String nome = prefs.getString("nome", null);
 
         textViewBemVindo.setText("Bem Vindo, " + nome + "!");
 

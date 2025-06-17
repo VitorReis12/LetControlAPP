@@ -20,14 +20,14 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/background_remove_png" />
+            app:srcCompat="@drawable/back_home_gradient" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="17dp"
             app:circularflow_defaultRadius="12dp"
             app:circularflow_radiusInDP="12dp"
             app:layout_constraintCircleRadius="12dp"
@@ -40,7 +40,7 @@
             android:id="@+id/imageViewAccount"
             android:layout_width="54dp"
             android:layout_height="48dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="37dp"
             android:layout_marginEnd="24dp"
             android:onClick="FrameAccount"
 
@@ -56,36 +56,43 @@
             app:layout_constraintGuide_percent="0.5" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button8"
-            android:layout_width="177dp"
+            android:id="@+id/buttonAbrirDispositivo"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="37dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/buttons_mid"
-            android:drawableLeft="@drawable/transfer_raletorio"
-            android:paddingStart="17px"
-            android:text="Dicas Sustent."
+            android:drawableLeft="@drawable/icon_dispositivo_30"
+            android:elevation="2dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="24px"
+            android:text="   Dispositivo"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="17sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintHorizontal_bias="0.77"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalGeral" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button9"
-            android:layout_width="177dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="37dp"
+            android:layout_marginEnd="24dp"
             android:background="@drawable/buttons_mid"
-            android:drawableLeft="@drawable/duvidas"
-            android:paddingStart="17dp"
-            android:text="Dúvidas freq."
+            android:drawableLeft="@drawable/icon_duvidas_30"
+            android:elevation="2dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="10dp"
+            android:text="  Dúvidas freq."
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.24"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalGeral" />
 
         <TextView
             android:id="@+id/textView5"
@@ -101,7 +108,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewAccount" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvTotalGeral"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -116,14 +123,14 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/cardview_radius_top"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button8">
+            app:layout_constraintTop_toBottomOf="@+id/buttonAbrirDispositivo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -139,12 +146,12 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView2"
                     android:layout_width="0dp"
-                    android:layout_height="234dp"
+                    android:layout_height="212dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="8dp"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="12dp"
+                    app:cardElevation="2dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline25"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -160,17 +167,18 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="12dp"
                             android:text="Consumo do mês"
-                            android:textSize="17sp"
+                            android:textColor="#526D81"
+                            android:textSize="15sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView11"
+                            android:id="@+id/tvTotalMes"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="7dp"
                             android:text="0.000 Litros"
                             android:textSize="24sp"
                             android:textStyle="bold"
@@ -187,7 +195,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                            app:layout_constraintTop_toBottomOf="@+id/tvTotalMes" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -201,12 +209,12 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="0dp"
-                    android:layout_height="112dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="27dp"
                     android:layout_marginEnd="24dp"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="12dp"
+                    app:cardElevation="2dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline25"
                     app:layout_constraintTop_toTopOf="parent">
@@ -220,20 +228,21 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:layout_marginTop="17dp"
-                            android:text="Consumo da Semana"
-                            android:textSize="17sp"
+                            android:layout_marginTop="12dp"
+                            android:text="Gasto desse mês"
+                            android:textColor="#526D81"
+                            android:textSize="15sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView12"
+                            android:id="@+id/tvGastoMes"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
-                            android:text="0.000 Litros"
+                            android:layout_marginTop="7dp"
+                            android:text="R$000,00"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -244,12 +253,12 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="112dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="24dp"
                     app:cardCornerRadius="12dp"
-                    app:cardElevation="12dp"
+                    app:cardElevation="2dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline25"
                     app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -263,19 +272,20 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="17dp"
                             android:text="Consumo Anual (2025)"
-                            android:textSize="17sp"
+                            android:textColor="#526D81"
+                            android:textSize="15sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/tvTotalAno"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="7dp"
                             android:text="00.000 Litros"
                             android:textSize="24sp"
                             android:textStyle="bold"
@@ -290,11 +300,12 @@
                     android:layout_width="0dp"
                     android:layout_height="59dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="37dp"
                     android:layout_marginEnd="24dp"
                     android:background="@drawable/buttons_mid"
                     android:drawableLeft="@drawable/frame"
                     android:drawableRight="@drawable/arrow_right"
+                    android:elevation="2dp"
                     android:onClick="RitmoAtual"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
@@ -310,11 +321,12 @@
                     android:layout_width="0dp"
                     android:layout_height="59dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="17dp"
                     android:layout_marginEnd="24dp"
                     android:background="@drawable/buttons_mid"
                     android:drawableLeft="@drawable/frame2"
                     android:drawableRight="@drawable/arrow_right"
+                    android:elevation="2dp"
                     android:paddingLeft="12dp"
                     android:paddingRight="12dp"
                     android:text="Gerenciar metas"

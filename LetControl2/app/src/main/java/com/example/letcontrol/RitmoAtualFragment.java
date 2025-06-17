@@ -121,7 +121,7 @@ public class RitmoAtualFragment extends Fragment {
         if (email != null) {
             new Thread(() -> {
                 try {
-                    String link = "https://f5e0-138-94-194-66.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
+                    String link = "https://88ff-177-23-2-16.ngrok-free.app/letcontrolphp/buscar_consumo.php?email=" + URLEncoder.encode(email, "UTF-8");
                     URL url = new URL(link);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");

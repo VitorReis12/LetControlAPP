@@ -23,6 +23,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AlterarRedeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DispositivoActivity"
+            android:exported="false" />
+        <activity
             android:name=".FluxoAtualActivity"
             android:exported="false" />
         <activity

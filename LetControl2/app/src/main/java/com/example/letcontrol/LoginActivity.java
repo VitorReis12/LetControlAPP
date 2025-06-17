@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 new Thread(() -> {
                     try {
-                        URL url = new URL("https://6b3d-143-0-189-182.ngrok-free.app/letcontrolphp/login.php");
+                        URL url = new URL("https://88ff-177-23-2-16.ngrok-free.app/letcontrolphp/login.php");
                         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                         conn.setRequestMethod("POST");
                         conn.setDoOutput(true);
@@ -96,6 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                                 runOnUiThread(() -> {
                                     if (status.equals("ok")) {
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                        finish(); // <- importante, fecha a LoginActivity
                                     } else {
                                         textViewErro.setText("Login inválido.");
                                     }
@@ -104,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                                 e.printStackTrace();
                                 runOnUiThread(() -> textViewErro.setText("Erro no JSON: " + e.getMessage()));
                             }
+
                         });
 
                     } catch (Exception e) {
@@ -126,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonTesteTelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ConnectingWifiActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });

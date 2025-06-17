@@ -1,70 +1,114 @@
 <?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header('Access-Control-Allow-Headers: Content-Type');
 
-session_start();
-
-header("Content-Type: application/json");
-file_put_contents("logconx.txt", json_encode($_GET) . PHP_EOL, FILE_APPEND);
-
-// Conexão com o banco
-$servername = "localhost";
+// Database connection
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
-$dbname = "letcontrol_2";
+$dbname = "letcontrol_4";
+
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
-    die(json_encode(["status" => "erro", "mensagem" => "Erro na conexão com o banco."]));
+    die(json_encode(["status" => "error", "mensagem" => "Falha na conexão: " . $conn->connect_error]));
 }
 
-// Recebendo dados via GET
-$user = $_GET['user'] ?? '';
-$vazao = $_GET['vazao'] ?? null;
-$litros = $_GET['litros'] ?? null;
+// Get data from GET request
+$userEmail = isset($_GET['user']) ? $_GET['user'] : '';
+$vazao = isset($_GET['vazao']) ? floatval($_GET['vazao']) : 0;
+$litros = isset($_GET['litros']) ? floatval($_GET['litros']) : 0;
 
-if (!$user || $vazao === null || $litros === null) {
-    die(json_encode(["status" => "erro", "mensagem" => "Parâmetros incompletos."]));
+if (empty($userEmail)) {
+    echo json_encode(["status" => "error", "mensagem" => "Email do usuário não fornecido"]);
+    exit;
 }
 
-// Busca o ID do usuário
-$sql_user = "SELECT id FROM usuarios WHERE email = ?";
-$stmt = $conn->prepare($sql_user);
-if (!$stmt) {
-    die(json_encode(["status" => "erro", "mensagem" => "Erro no prepare() SELECT: " . $conn->error]));
-}
-$stmt->bind_param("s", $user);
+// Get user ID from email
+$userId = 0;
+$sql = "SELECT id FROM usuarios WHERE email = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $userEmail);
 $stmt->execute();
 $result = $stmt->get_result();
 
-if ($result->num_rows == 0) {
-    die(json_encode(["status" => "erro", "mensagem" => "Usuário não encontrado."]));
-}
-
-$usuario = $result->fetch_assoc();
-$usuario_id = $usuario['id'];
-
-// Insere ou atualiza os dados do usuário
-$sql_upsert = "INSERT INTO consumo_de_agua (usuario_id, vazao_l_min, total_litros)
-               VALUES (?, ?, ?)
-               ON DUPLICATE KEY UPDATE 
-               vazao_l_min = VALUES(vazao_l_min), 
-               total_litros = VALUES(total_litros)";
-
-$stmt_upsert = $conn->prepare($sql_upsert);
-if (!$stmt_upsert) {
-    die(json_encode(["status" => "erro", "mensagem" => "Erro no prepare() UPSERT: " . $conn->error]));
-}
-$stmt_upsert->bind_param("idd", $usuario_id, $vazao, $litros);
-
-$ok = $stmt_upsert->execute();
-
-if ($ok) {
-    echo json_encode(["status" => "ok", "mensagem" => "Dados atualizados com sucesso."]);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $userId = $row['id'];
 } else {
-    echo json_encode([
-        "status" => "erro",
-        "mensagem" => "Erro ao atualizar os dados.",
-        "erro_sql" => $stmt_upsert->error
-    ]);
+    echo json_encode(["status" => "error", "mensagem" => "Usuário não encontrado"]);
+    exit;
+}
+
+$stmt->close();
+
+// Get current date information
+$currentDate = new DateTime();
+$ano = $currentDate->format('Y');
+$mes = $currentDate->format('n');
+$semana = $currentDate->format('W');
+$dataAtual = $currentDate->format('Y-m-d H:i:s');
+
+try {
+    // Start transaction
+    $conn->begin_transaction();
+
+    // 1. UPDATE na tabela consumo_de_agua (atualiza o último registro do usuário)
+    $sqlConsumo = "UPDATE consumo_de_agua 
+                   SET vazao_l_min = ?, total_litros = ?, data_leitura = ?
+                   WHERE consumo_de_agua_id = (
+                       SELECT MAX(consumo_de_agua_id) 
+                       FROM (SELECT * FROM consumo_de_agua) AS temp 
+                       WHERE usuario_id = ?
+                   )";
+    $stmtConsumo = $conn->prepare($sqlConsumo);
+    $stmtConsumo->bind_param("ddsi", $vazao, $litros, $dataAtual, $userId);
+    $stmtConsumo->execute();
+    
+    $stmtConsumo->close();
+
+    // 2. UPDATE relatorio_semanal
+    $sqlSemanal = "UPDATE relatorio_semanal 
+                   SET total_litros_semana = total_litros_semana + ? 
+                   WHERE usuario_id = ? AND ano = ? AND semana = ?";
+    $stmtSemanal = $conn->prepare($sqlSemanal);
+    $stmtSemanal->bind_param("diii", $litros, $userId, $ano, $semana);
+    $stmtSemanal->execute();
+    
+    $stmtSemanal->close();
+
+    // 3. UPDATE relatorio_mensal
+    $sqlMensal = "UPDATE relatorio_mensal 
+                  SET total_litros_mes = total_litros_mes + ? 
+                  WHERE usuario_id = ? AND ano = ? AND mes = ?";
+    $stmtMensal = $conn->prepare($sqlMensal);
+    $stmtMensal->bind_param("diii", $litros, $userId, $ano, $mes);
+    $stmtMensal->execute();
+    
+    $stmtMensal->close();
+
+    // 4. UPDATE relatorio_anual
+    $sqlAnual = "UPDATE relatorio_anual 
+                 SET total_litros_ano = total_litros_ano + ? 
+                 WHERE usuario_id = ? AND ano = ?";
+    $stmtAnual = $conn->prepare($sqlAnual);
+    $stmtAnual->bind_param("dii", $litros, $userId, $ano);
+    $stmtAnual->execute();
+    
+    $stmtAnual->close();
+
+    // Commit transaction
+    $conn->commit();
+
+    echo json_encode(["status" => "ok", "mensagem" => "Dados atualizados com sucesso"]);
+} catch (Exception $e) {
+    // Rollback transaction on error
+    $conn->rollback();
+    echo json_encode(["status" => "error", "mensagem" => "Erro ao atualizar dados: " . $e->getMessage()]);
 }
 
 $conn->close();

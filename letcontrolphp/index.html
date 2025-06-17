@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monitoramento de Consumo de Água</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Monitoramento de Consumo de Água</h1>
+  </header>
+
+  <main>
+    <h2>Histórico de Consumo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Consumo (Litros)</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-dados">
+        <!-- Dados serão inseridos pelo JavaScript -->
+      </tbody>
+    </table>
+
+    <h2>Gráfico de Consumo</h2>
+    <canvas id="graficoConsumo"></canvas>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

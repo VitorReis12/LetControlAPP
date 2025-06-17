@@ -97,7 +97,7 @@ public class FluxoAtualActivity extends AppCompatActivity {
                     return;
                 }
 
-                URL url = new URL("https://6b3d-143-0-189-182.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8"));
+                URL url = new URL("https://88ff-177-23-2-16.ngrok-free.app/letcontrolphp/busca_consumo.php?email=" + URLEncoder.encode(email, "UTF-8"));
                 HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
                 conexao.setRequestMethod("GET");
 
@@ -115,20 +115,20 @@ public class FluxoAtualActivity extends AppCompatActivity {
                     String fluxo = json.getString("vazao_l_min");
 
 
-
                     runOnUiThread(() -> {
-                        textViewFluxoAtual.setText(fluxo + " ");
-                        textViewConsumoMedioHora.setText(fluxo + " L/h");
                         float f = Float.parseFloat(fluxo);
-                        float l = f/60;
-                        String lmin = String.valueOf(l);
-                        textViewConsumoMedioMin.setText( lmin + " L/m");
+                        float l = f * 60;
+                        String lhora = String.valueOf(l);
+                        textViewFluxoAtual.setText(lhora + " ");
+                        textViewConsumoMedioHora.setText(lhora + " L/h");
+
+                        textViewConsumoMedioMin.setText(fluxo + " L/m");
                         Log.d(TAG, "buscarDados: " + fluxo);
                     });
                 }
 
             } catch (Exception e) {
-                Log.d(TAG, "buscarDados: "+e);
+                Log.d(TAG, "buscarDados: " + e);
                 runOnUiThread(() ->
 
                         Toast.makeText(getApplicationContext(), "Erro: " + e.getMessage(), Toast.LENGTH_LONG).show()

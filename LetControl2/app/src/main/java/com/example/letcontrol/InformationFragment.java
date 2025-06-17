@@ -1,5 +1,8 @@
 package com.example.letcontrol;
 
+
+import static com.example.letcontrol.R.drawable.*;
+
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -93,7 +96,11 @@ public class InformationFragment extends Fragment {
             buttonMetas.setOnClickListener(V-> FragmentMetas());
 
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+            if (transaction == null) {
+            transaction.add(R.id.frame_conteudo_estatisticas, consumoFragment);
+            } else {
             transaction.replace(R.id.frame_conteudo_estatisticas, consumoFragment);
+            }
             transaction.commit();
 
             return view;
@@ -106,7 +113,7 @@ public class InformationFragment extends Fragment {
             ResetButton();
             buttonConsumo.setBackgroundResource(R.drawable.button_relatorio);
             textViewConsumo.setTextColor(Color.parseColor("#0A98FF"));
-
+            buttonConsumo.setImageResource(water_relatorio);
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_conteudo_estatisticas,consumoFragment);
             transaction.commit();
@@ -123,7 +130,7 @@ public class InformationFragment extends Fragment {
                 ResetButton();
                 buttonGastos.setBackgroundResource(R.drawable.button_relatorio);
                 textViewGastos.setTextColor(Color.parseColor("#0A98FF"));
-
+                buttonGastos.setImageResource(consumo_de_agua_white);
                 FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
                 transaction.replace(R.id.frame_conteudo_estatisticas, gastosFragment);
                 transaction.commit(); // ou .commitAllowingStateLoss() se preferir
@@ -139,7 +146,7 @@ public class InformationFragment extends Fragment {
             ResetButton();
             buttonMetas.setBackgroundResource(R.drawable.button_relatorio);
             textViewMetas.setTextColor(Color.parseColor("#0A98FF"));
-
+            buttonMetas.setImageResource(metas_white);
             FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_conteudo_estatisticas, metasFragment);
             transaction.commit();
@@ -156,6 +163,9 @@ public class InformationFragment extends Fragment {
             buttonConsumo.setBackgroundResource(R.drawable.button_relatorio_gray);
             buttonGastos.setBackgroundResource(R.drawable.button_relatorio_gray);
             buttonMetas.setBackgroundResource(R.drawable.button_relatorio_gray);
+            buttonConsumo.setImageResource(R.drawable.water_gray);
+            buttonGastos.setImageResource(R.drawable.gastos_but_relatorio);
+            buttonMetas.setImageResource(R.drawable.metas_but_relatorio);
             textViewConsumo.setTextColor(Color.parseColor("#757474"));
             textViewGastos.setTextColor(Color.parseColor("#757474"));
             textViewMetas.setTextColor(Color.parseColor("#757474"));

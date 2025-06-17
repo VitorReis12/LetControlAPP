@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -61,8 +62,8 @@ public class ConnectingWifiActivity extends AppCompatActivity {
 
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-
         buttonCadastrarRede.setOnClickListener(v -> {
+
             nomeRede = TextInputRede.getText().toString();
             senhaRede = TextInputSenhaRede.getText().toString();
 
@@ -71,14 +72,13 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                 return;
             }
 
-
-
+            SharedPreferences prefs = getSharedPreferences("cadastro", MODE_PRIVATE);
+            String email = prefs.getString("email", null);
 
             String user = User.getEmail();
 
-            comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + ";" + "user=" + user + "\n";
-            comand = "rede=Homi 2G" + ";" + "senha=C0rn37_0g" + ";" + "user=" + user + "\n";
-
+            comando = "rede=" + nomeRede + ";" + "senha=" + senhaRede + ";" + "user=" + email + "\n";
+            comand = "rede=Homi 2G" + ";" + "senha=C0rn37_0g" + ";" + "user=" + "guh.santoshenri@gmail.com" + "\n";
 
             if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
                     checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ||
@@ -99,7 +99,6 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                 return;
             }
 
-
             if (bluetoothAdapter.getState() == BluetoothAdapter.STATE_ON) {
                 Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
                 for (BluetoothDevice device : pairedDevices) {
@@ -110,18 +109,15 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                 }
             }
 
-
             if (letControl == null) {
                 Toast.makeText(getApplicationContext(), "Dispositivo LetControl não encontrado", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-
             if (checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN}, 2);
                 return;
             }
-
 
             new Thread(() -> {
                 try {
@@ -155,7 +151,6 @@ public class ConnectingWifiActivity extends AppCompatActivity {
                     });
                 }
             }).start();
-
 
         });
 

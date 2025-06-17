@@ -1,16 +1,23 @@
 <?php
+header("Content-Type: application/json; charset=utf-8");
+
 $servername = "localhost";
 $username = "root";
+
 $password = "";
-$dbname = "letcontrol_2";
+$dbname = "letcontrol_4";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) die("Erro de conexão");
+$conn->set_charset("utf8mb4");
+
+if ($conn->connect_error) {
+    die(json_encode(["status" => "erro", "mensagem" => "Erro de conexão: " . $conn->connect_error]));
+}
 
 $email = $_POST['email'] ?? '';
 $senha = $_POST['senha'] ?? '';
 
-// Busca a senha direto (sem password_verify), assumindo que ela está em texto plano
+// Consulta usuário com email e senha em texto plano (não recomendado em produção)
 $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $email, $senha);
@@ -23,5 +30,5 @@ if ($user) {
 } else {
     echo json_encode(["status" => "erro", "mensagem" => "Credenciais inválidas."]);
 }
+
 $conn->close();
-?>
